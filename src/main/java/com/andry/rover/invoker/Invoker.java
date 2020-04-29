@@ -35,7 +35,7 @@ public class Invoker implements IInvoker {
 
     @Override
     public List<String> process() throws RoverPositionInvalidException {
-        List<String> ewPositionsAsArray = new ArrayList<>();
+        List<String> newPositionsAsArray = new ArrayList<>();
         for(Triple<Position, Direction, List<Character>> item: this.InitialParameters) {
             Position currentPosition = item.getLeft();
             final IRover rover = new Rover(currentPosition, item.getMiddle(), new MaxPositionValidator(this.maxPosition));
@@ -45,9 +45,9 @@ public class Invoker implements IInvoker {
                 command.execute();
             }
             //toString returns the new position after all commands have been executed.
-            ewPositionsAsArray.add(rover.toString());
+            newPositionsAsArray.add(rover.toString());
         }
-        return ewPositionsAsArray;
+        return newPositionsAsArray;
     }
 
     @Override
