@@ -6,12 +6,12 @@ public interface IRover {
 	/**
 	 * Algorithm executed when the rover wants to turn left.
 	 */
-	void turnLeft() throws RoverPositionInvalidException;
+	void turnLeft();
 	
 	/**
 	 * Algorithm executed when the rover wants to turn right.
 	 */
-	void turnRight() throws RoverPositionInvalidException;
+	void turnRight();
 	
 	/**
 	 * Algorithm executed when the rover wants to move from it's position.

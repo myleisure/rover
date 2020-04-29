@@ -19,8 +19,7 @@ public class Rover implements IRover {
     }
 
     @Override
-    public void turnLeft() throws RoverPositionInvalidException {
-        this.positionValidator.validate(this.getPosition());
+    public void turnLeft() {
         switch (this.direction) {
             case EAST:
                 this.setDirection(Direction.NORTH);
@@ -38,9 +37,7 @@ public class Rover implements IRover {
     }
 
     @Override
-    public void turnRight() throws RoverPositionInvalidException {
-        this.positionValidator.validate(this.getPosition());
-
+    public void turnRight() {
         switch (this.direction) {
             case EAST:
                 this.setDirection(Direction.SOUTH);
