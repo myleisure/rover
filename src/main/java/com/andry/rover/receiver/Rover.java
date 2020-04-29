@@ -61,19 +61,20 @@ public class Rover implements IRover {
 
         switch (this.direction) {
             case EAST:
-                this.getPosition().setX(newPosition.getX() + 1);
+                newPosition.setX(newPosition.getX() + 1);
                 break;
             case NORTH:
-                this.getPosition().setY(newPosition.getY() + 1);
+                newPosition.setY(newPosition.getY() + 1);
                 break;
             case WEST:
-                this.getPosition().setX(newPosition.getX() - 1);
+                newPosition.setX(newPosition.getX() - 1);
                 break;
             case SOUTH:
-                this.getPosition().setY(newPosition.getY() - 1);
+                newPosition.setY(newPosition.getY() - 1);
                 break;
         }
-        this.positionValidator.validate(this.getPosition());
+        this.positionValidator.validate(newPosition);
+        this.position = newPosition;
     }
 
     public Position getPosition() {

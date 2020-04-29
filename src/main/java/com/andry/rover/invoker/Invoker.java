@@ -72,12 +72,6 @@ public class Invoker implements IInvoker {
         }
     }
 
-    private List<Position> getInitialPositionsInFile() {
-        return this.InitialParameters.stream()
-                .map(t -> new Position(t.getLeft().getX(), t.getLeft().getY()))
-                .collect(Collectors.toList());
-    }
-
     private Position createCurrentPosition(String secondLineOfStringInBufferArray) {
         final var positionArray = secondLineOfStringInBufferArray.split(" ");
         return new Position(Integer.parseInt(positionArray[0]), Integer.parseInt(positionArray[1]));
